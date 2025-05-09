@@ -1,10 +1,10 @@
-# n8n Log Viewer
+# n8n Log Formatter
 
-A colorized n8n event log viewer for monitoring AI workflow executions in real-time.
+A colorized n8n event log formatter for monitoring AI workflow executions in real-time.
 
 ## Overview
 
-This tool allows you to monitor n8n event logs with a focus on AI-related events. It connects to a remote n8n instance running in Docker and displays workflow execution events with color-coded formatting for improved readability.
+This tool allows you to format n8n event logs with a focus on AI-related events. It connects to a remote n8n instance running in Docker and displays workflow execution events with color-coded formatting for improved readability.
 
 ## Features
 
@@ -26,9 +26,9 @@ This tool allows you to monitor n8n event logs with a focus on AI-related events
 Edit the script to adjust these configuration variables:
 
 ```bash
-SSH_USER="jonflatt"        # SSH username for the remote host
-SSH_HOST="192.168.1.2"     # IP address or hostname of the remote server
-DOCKER_CONTAINER="abe89595fc2a"  # Docker container ID or name
+SSH_USER="username"        # SSH username for the remote host
+SSH_HOST="your-server"     # IP address or hostname of the remote server
+DOCKER_CONTAINER="container-id"  # Docker container ID or name
 LOG_PATH="/home/node/.n8n/n8nEventLog.log"  # Path to the log file inside the container
 ```
 
@@ -36,23 +36,23 @@ LOG_PATH="/home/node/.n8n/n8nEventLog.log"  # Path to the log file inside the co
 
 ```bash
 # Show help information
-./format-weather.sh -h
-./format-weather.sh --help
+./format-n8n-log.sh -h
+./format-n8n-log.sh --help
 
 # Use compact view (summarized AI responses)
-./format-weather.sh -c
-./format-weather.sh --compact
+./format-n8n-log.sh -c
+./format-n8n-log.sh --compact
 
 # Use full view (complete AI responses)
-./format-weather.sh -f
-./format-weather.sh --full
+./format-n8n-log.sh -f
+./format-n8n-log.sh --full
 ```
 
-The default view is full. Press Ctrl+C to exit the log viewer.
+The default view is full. Press Ctrl+C to exit the formatter.
 
 ## Display Format
 
-The viewer displays the following event types:
+The formatter displays the following event types:
 
 - 🤖 **AI Responses**: Output from AI nodes
 - ▶️ **Node Started**: When a node begins execution
